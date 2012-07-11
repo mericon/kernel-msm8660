@@ -865,4 +865,4 @@ module_exit(cpufreq_smartass_exit);
 
 MODULE_AUTHOR ("Erasmux");
 MODULE_DESCRIPTION ("'cpufreq_smartass2' - A smart cpufreq governor");
-MODULE_LICENSE ("GPL")
+MODULE_LICENSE ("GPL");
