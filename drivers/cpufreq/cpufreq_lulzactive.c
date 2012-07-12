@@ -235,7 +235,7 @@ static void cpufreq_lulzactive_timer(unsigned long data)
 		&per_cpu(cpuinfo, data);
 	u64 now_idle;
 	unsigned int new_freq;
-	unsigned int index, index_old;
+	unsigned int index;
 	int ret;
 	static unsigned int stuck_on_sampling = 0;
 	static unsigned int cpu_load_captured = 0;
