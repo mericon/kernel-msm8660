@@ -28,6 +28,7 @@
 #include <net/pkt_sched.h>
 #include <net/dst.h>
 
+#pragma GCC diagnostic ignored "-Waddress"
 /* Main transmission queue. */
 
 /* Modifications to data participating in scheduling must be protected with

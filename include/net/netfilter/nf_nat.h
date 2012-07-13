@@ -3,6 +3,7 @@
 #include <linux/netfilter_ipv4.h>
 #include <net/netfilter/nf_conntrack_tuple.h>
 
+#pragma GCC diagnostic ignored "-Waddress"
 #define NF_NAT_MAPPING_TYPE_MAX_NAMELEN 16
 
 enum nf_nat_manip_type {
