@@ -68,13 +68,13 @@ static spinlock_t down_cpumask_lock;
 /*
  * The minimum amount of time to spend at a frequency before we can ramp up.
  */
-#define DEFAULT_UP_SAMPLE_TIME 24000
+#define DEFAULT_UP_SAMPLE_TIME 48000
 static unsigned long up_sample_time;
 
 /*
  * The minimum amount of time to spend at a frequency before we can ramp down.
  */
-#define DEFAULT_DOWN_SAMPLE_TIME 49000 //80000;
+#define DEFAULT_DOWN_SAMPLE_TIME 25000 //80000;
 static unsigned long down_sample_time;
 
 /*
@@ -92,13 +92,13 @@ enum {
 /*
  * CPU freq will be increased if measured load > inc_cpu_load;
  */
-#define DEFAULT_INC_CPU_LOAD 60
+#define DEFAULT_INC_CPU_LOAD 70
 static unsigned long inc_cpu_load;
 
 /*
  * CPU freq will be decreased if measured load < dec_cpu_load;
  */
-#define DEFAULT_DEC_CPU_LOAD 30
+#define DEFAULT_DEC_CPU_LOAD 50
 static unsigned long dec_cpu_load;
 
 /*
