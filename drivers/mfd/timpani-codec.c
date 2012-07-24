@@ -2822,7 +2822,7 @@ static int adie_codec_refcnt_write(u8 reg, u8 mask, u8 val, enum refcnt cnt,
 	u8 reg_mask = 0;
 	int rc = 0;
 
-	for (i = 0; i < 0xEF; i++) {
+	for (i = 0;ARRAY_SIZE(timpani_regset); i++) {
 		if (timpani_regset[i].reg_addr == reg) {
 			for (j = 0; j < TIMPANI_MAX_FIELDS; j++) {
 				fld_mask = timpani_regset[i].fld_ref_cnt[j].mask

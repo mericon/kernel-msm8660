@@ -36,14 +36,6 @@ config IOSCHED_CFQ
 
 	  Note: If BLK_CGROUP=m, then CFQ can be built only as module.
 
-config IOSCHED_SIO
-	tristate "Simple I/O scheduler"
-	default y
-	---help---
-	  Enable Simple I/O scheduler.
-
-	  This is the default I/O scheduler.
-
 config CFQ_GROUP_IOSCHED
 	bool "CFQ Group Scheduling support"
 	depends on IOSCHED_CFQ && BLK_CGROUP
