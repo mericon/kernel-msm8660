@@ -2104,8 +2104,10 @@ config PM8921_MIC_BIAS
 
 choice
     prompt "SWIQI"
-    optional
-    default n
+    default SWIQI_NONE
+    config SWIQI_NONE
+    	bool "Disable SWIQI/2"
+
     config SEMC_SWIQI
         bool "Enable SWIQI"
         default n
