@@ -1,7 +1,10 @@
 if ARCH_MSM
 
 menu "MSM SoC Type"
-
+config MSM8660_OC
+	int "OC"
+	default 1512000
+	help
 config ARCH_MSM7X01A
 	bool "MSM7x00A / MSM7x01A"
 	select ARCH_MSM_ARM11
