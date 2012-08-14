@@ -34,7 +34,7 @@ CONFIG_IRQ_WORK=y
 #
 CONFIG_EXPERIMENTAL=y
 CONFIG_INIT_ENV_ARG_LIMIT=32
-CONFIG_CROSS_COMPILE="/home/mericon/cm/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-"
+CONFIG_CROSS_COMPILE="/home/mericon/projects/cm/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-"
 CONFIG_LOCALVERSION="-Mericon"
 CONFIG_LOCALVERSION_AUTO=y
 CONFIG_HAVE_KERNEL_GZIP=y
