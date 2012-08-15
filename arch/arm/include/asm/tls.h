@@ -18,7 +18,7 @@
 	tst	\tmp1, #HWCAP_TLS		@ hardware TLS available?
 	mcrne	p15, 0, \tp, c13, c0, 3		@ yes, set TLS register
 	movne  \tmp1, #0
-	 mcrne  p15, 0, \tmp1, c13, c0, 2  @ clear user r/w TLS register
+	mcrne  p15, 0, \tmp1, c13, c0, 2  @ clear user r/w TLS register
 	streq	\tp, [\tmp2, #-15]		@ set TLS value at 0xffff0ff0
 	.endm
 
