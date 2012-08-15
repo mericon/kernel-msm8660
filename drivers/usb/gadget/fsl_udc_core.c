@@ -157,7 +157,11 @@ static inline void fsl_set_accessors(struct fsl_usb2_platform_data *pdata) {}
  * done() - retire a request; caller blocked irqs
  * @status : request status to be set, only works when
  *	request is still in progress.
- *--------------------------------------------------------------*/
+ *------------------------------------------------/* Ensure dTD's next dtd pointer to be updated */
+
+  	721 	
+
++    wmb();--------------*/
 static void done(struct fsl_ep *ep, struct fsl_req *req, int status)
 {
 	struct fsl_udc *udc = NULL;
@@ -717,6 +721,8 @@ static void fsl_queue_td(struct fsl_ep *ep, struct fsl_req *req)
 		lastreq = list_entry(ep->queue.prev, struct fsl_req, queue);
 		lastreq->tail->next_td_ptr =
 			cpu_to_hc32(req->head->td_dma & DTD_ADDR_MASK);
+		/* Ensure dTD's next dtd pointer to be updated */
+		wmb();
 		/* Read prime bit, if 1 goto done */
 		if (fsl_readl(&dr_regs->endpointprime) & bitmask)
 			goto out;

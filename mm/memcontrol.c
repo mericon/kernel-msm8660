@@ -4478,6 +4478,11 @@ static int mem_cgroup_usage_register_event(struct cgroup *cgrp,
 	/* Free old spare buffer and save old primary buffer as spare */
 	kfree(thresholds->spare);
 	thresholds->spare = thresholds->primary;
+	/* If all events are unregistered, free the spare array */
+	if (!new) {
+		kfree(thresholds->spare);
+		thresholds->spare = NULL;
+	}
 
 	rcu_assign_pointer(thresholds->primary, new);
 

@@ -77,6 +77,11 @@ static inline int ffs(int x)
 	return __builtin_ffs(x);
 }
 
+static inline int fls64(__u64 w)
+{
+	return (sizeof(__u64) * 8) - __builtin_clzll(w);
+}
+
 /**
  * fls - find last set bit in word
  * @x: the word to search
