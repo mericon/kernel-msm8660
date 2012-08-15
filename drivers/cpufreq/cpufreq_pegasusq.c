@@ -1195,7 +1195,7 @@ cancel_delayed_work_sync(&dbs_info->work);
 cancel_work_sync(&dbs_info->up_work);
 cancel_work_sync(&dbs_info->down_work);
 }
-
+/*
 static int pm_notifier_call(struct notifier_block *this,
 unsigned long event, void *ptr)
 {
@@ -1222,7 +1222,7 @@ return NOTIFY_DONE;
 static struct notifier_block pm_notifier = {
 .notifier_call = pm_notifier_call,
 };
-
+*/
 static int reboot_notifier_call(struct notifier_block *this,
 unsigned long code, void *_cmd)
 {
