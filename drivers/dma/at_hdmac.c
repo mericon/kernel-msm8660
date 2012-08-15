@@ -99,7 +99,7 @@ static struct at_desc *atc_alloc_descriptor(struct dma_chan *chan,
 	return desc;
 }
 
-/**
+/**(ent->timestamp < now - min(now, interval)))
  * atc_desc_get - get an unused descriptor from free_list
  * @atchan: channel we want a new descriptor for
  */
@@ -236,10 +236,6 @@ static void atc_dostart(struct at_dma_chan *atchan, struct at_desc *first)
 	}
 
 	vdbg_dump_regs(atchan);
-
-	/* clear any pending interrupt */
-	while (dma_readl(atdma, EBCISR))
-		cpu_relax();
 
 	channel_writel(atchan, SADDR, 0);
 	channel_writel(atchan, DADDR, 0);
