@@ -693,4 +693,3 @@ config MACH_SDCC_BCM_DRIVER
 	bool "Modify a Qualcomm SDCC Controller issue on Broadcom driver"
 	depends on (MMC_MSM || MMC_MSM7X00A)
 	default n
-
